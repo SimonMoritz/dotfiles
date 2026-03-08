@@ -17,9 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 # Alias
 alias copyfile='xclip -selection clipboard <'
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 bindkey "^[[1;5C" forward-word   # Ctrl+Right
 bindkey "^[[1;5D" backward-word  # Ctrl+Left
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
