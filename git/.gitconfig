@@ -1,7 +1,7 @@
 [user]
 	email = 92054178+SimonMoritz@users.noreply.github.com
 	name = Simon Moritz
-	signingkey = F6980642117A4363
+	signingkey = 67D0AA7455037170F62E3AD9E0979D5C1E848704
 [core]
 	autocrlf = input
 	excludesFile = ~/.gitignore
