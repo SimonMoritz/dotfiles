@@ -9,4 +9,3 @@
 	gpgsign = true
 [push]
 	autoSetupRemote=true
-
