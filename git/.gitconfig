@@ -1,0 +1,11 @@
+[user]
+	email = 92054178+SimonMoritz@users.noreply.github.com
+	name = Simon Moritz
+	signingkey = F6980642117A4363
+[core]
+	autocrlf = input
+	excludesFile = ~/.gitignore
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote=true

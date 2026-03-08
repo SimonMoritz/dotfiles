@@ -1,0 +1,12 @@
+add_newline = false
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+modified = "!"
+untracked = "?"
+staged = "+"
+
+[directory]
+truncation_length = 3
+
