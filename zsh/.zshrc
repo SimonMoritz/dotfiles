@@ -117,7 +117,7 @@ if (( $+commands[fzf] )); then
     export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
   fi
   export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:300 {} 2>/dev/null'"
-  export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --color=always --icons {}'"
+  export FZF_ALT_C_OPTS="--preview 'eza --tree --level=2 --color=always {}'"
   source <(fzf --zsh)
 fi
 
@@ -131,12 +131,11 @@ fi
 # Aliases
 # ---------------------------------------------------------------------------
 if (( $+commands[eza] )); then
-  alias ls='eza --group-directories-first --icons=auto'
-  alias ll='eza -lah --group-directories-first --icons=auto --git'
-  alias la='eza -a --group-directories-first --icons=auto'
-  alias lt='eza --tree --level=2 --icons=auto --git-ignore'
+  alias ls='eza --group-directories-first'
+  alias ll='eza -lah --group-directories-first --git'
+  alias la='eza -a --group-directories-first'
+  alias lt='eza --tree --level=2 --git-ignore'
 fi
-(( $+commands[bat] )) && alias cat='bat --paging=never'   # plain output when piped
 (( $+commands[nvim] )) && alias vim='nvim' vi='nvim'
 
 alias ..='cd ..'
