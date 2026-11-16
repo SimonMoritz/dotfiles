@@ -1,11 +1,15 @@
 [user]
 	name = Simon Moritz
 	email = 92054178+SimonMoritz@users.noreply.github.com
-	signingkey = 67D0AA7455037170F62E3AD9E0979D5C1E848704
+	signingkey = ~/.ssh/id_ed25519.pub
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
 [init]
 	defaultBranch = main
 [core]

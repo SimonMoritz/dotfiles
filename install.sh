@@ -55,14 +55,7 @@ stow --no-folding --restow --dir="$DOTFILES" --target="$HOME" "${PACKAGES[@]}"
 [[ -f "$HOME/.zshrc.local" ]] || printf '# Machine-specific zsh config (not in git)\n' > "$HOME/.zshrc.local"
 [[ -f "$HOME/.gitconfig.local" ]] || printf '# Machine-specific git config (not in git)\n' > "$HOME/.gitconfig.local"
 
-# 6. GPG: use the macOS pinentry so commit signing can prompt for the passphrase
-mkdir -p "$HOME/.gnupg" && chmod 700 "$HOME/.gnupg"
-if ! grep -q '^pinentry-program' "$HOME/.gnupg/gpg-agent.conf" 2>/dev/null; then
-  echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> "$HOME/.gnupg/gpg-agent.conf"
-  gpgconf --kill gpg-agent 2>/dev/null || true
-fi
-
-# 7. Rust toolchain + Node LTS
+# 6. Rust toolchain + Node LTS
 RUSTUP="$(brew --prefix rustup)/bin/rustup"
 if [[ -x "$RUSTUP" ]] && ! "$RUSTUP" toolchain list 2>/dev/null | grep -q stable; then
   info "Installing stable Rust"

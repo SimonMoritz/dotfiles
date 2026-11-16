@@ -24,8 +24,6 @@ brew "git"
 brew "git-lfs"
 brew "git-delta"
 brew "gh"
-brew "gnupg"
-brew "pinentry-mac"
 
 # Languages / runtimes
 brew "fnm"      # Node versions (replaces nvm)

@@ -40,12 +40,10 @@ Machine-specific, untracked: `~/.zshrc.local`, `~/.gitconfig.local`.
 
 ## Commit signing
 
-`.gitconfig` signs commits with GPG key `E0979D5C1E848704`. Move it from the old machine:
-
-```bash
-gpg --export-secret-keys --armor E0979D5C1E848704 > key.asc   # old machine
-gpg --import key.asc && rm key.asc                             # new Mac
-```
+Commits and tags are signed with the SSH key `~/.ssh/id_ed25519.pub` (`gpg.format = ssh`).
+On a new Mac, copy that key pair over (or make a new one with `ssh-keygen -t ed25519`
+and add it on GitHub as a **Signing Key**). `git/.config/git/allowed_signers` lets
+`git log --show-signature` verify your own commits locally; add any new public key there.
 
 To use another key (or turn signing off) on one machine, put it in `~/.gitconfig.local`.
 
