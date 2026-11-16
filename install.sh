@@ -32,6 +32,9 @@ fi
 # 3. Packages
 info "Installing Brewfile packages"
 brew bundle --file="$DOTFILES/Brewfile"
+# Homebrew leaves share/zsh group-writable, which makes compinit complain
+# about "insecure directories" on every new shell
+chmod -R go-w "$(brew --prefix)/share/zsh"
 
 # 4. Move any existing real files out of the way, then symlink
 info "Linking dotfiles"
