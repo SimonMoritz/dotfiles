@@ -1,0 +1,9 @@
+# Global gitignore (git reads this path by default)
+.DS_Store
+._*
+*__pycache__*
+*.mypy_cache*
+.claude
+.vscode
+.env
+REPOSITORY_ANALYSIS.md

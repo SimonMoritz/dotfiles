@@ -1,0 +1,56 @@
+# Ghostty config — reference: https://ghostty.org/docs/config/reference
+# Reload with ⌘⇧,   ·   list options: ghostty +show-config --default --docs
+
+# --- Font -------------------------------------------------------------------
+# Nerd Font is required for the starship prompt glyphs
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+adjust-cell-height = 8%
+
+# --- Theme ------------------------------------------------------------------
+# Follows macOS light/dark mode. Preview others: ghostty +list-themes
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+background-opacity = 0.96
+background-blur = true
+
+# --- Window -----------------------------------------------------------------
+window-width = 130
+window-height = 40
+window-padding-x = 12
+window-padding-y = 8
+window-padding-balance = true
+window-save-state = always
+macos-titlebar-style = tabs
+unfocused-split-opacity = 0.85
+
+# --- Cursor -----------------------------------------------------------------
+cursor-style = bar
+cursor-style-blink = false
+
+# --- Behaviour --------------------------------------------------------------
+# Left ⌥ acts as Alt (fzf option-c, word jumps); right ⌥ still types special chars
+macos-option-as-alt = left
+mouse-hide-while-typing = true
+copy-on-select = clipboard
+scrollback-limit = 50000000
+
+# Shell integration is auto-injected for zsh. Extras:
+#   sudo         keep terminfo through sudo
+#   ssh-terminfo install Ghostty's terminfo on hosts you ssh into
+#   ssh-env      fall back to TERM=xterm-256color when it can't
+shell-integration-features = sudo,ssh-terminfo,ssh-env
+
+# --- Quick terminal (drop-down) --------------------------------------------
+# ⌘` from anywhere. Needs Ghostty in System Settings → Privacy → Accessibility.
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.12
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+# --- Splits -----------------------------------------------------------------
+# Defaults: ⌘D split right, ⌘⇧D split down, ⌘⌥←↑↓→ move between splits
+keybind = cmd+shift+enter=toggle_split_zoom
+keybind = cmd+ctrl+left=resize_split:left,20
+keybind = cmd+ctrl+right=resize_split:right,20
+keybind = cmd+ctrl+up=resize_split:up,20
+keybind = cmd+ctrl+down=resize_split:down,20
+keybind = cmd+ctrl+equal=equalize_splits

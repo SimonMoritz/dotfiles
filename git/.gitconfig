@@ -1,11 +1,47 @@
 [user]
-	email = 92054178+SimonMoritz@users.noreply.github.com
 	name = Simon Moritz
+	email = 92054178+SimonMoritz@users.noreply.github.com
 	signingkey = 67D0AA7455037170F62E3AD9E0979D5C1E848704
-[core]
-	autocrlf = input
-	excludesFile = ~/.gitignore
 [commit]
 	gpgsign = true
+[tag]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+[diff]
+	algorithm = histogram
+	colorMoved = default
+[merge]
+	conflictStyle = zdiff3
+[rerere]
+	enabled = true
 [push]
-	autoSetupRemote=true
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[branch]
+	sort = -committerdate
+[alias]
+	st = status -sb
+	co = checkout
+	sw = switch
+	lg = log --graph --pretty=format:'%C(yellow)%h%C(reset) %s %C(green)(%cr)%C(reset) %C(blue)<%an>%C(reset)%C(auto)%d' -20
+	amend = commit --amend --no-edit
+	undo = reset --soft HEAD~1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# Machine-specific overrides (different key, work email, …). Must stay last.
+[include]
+	path = ~/.gitconfig.local
